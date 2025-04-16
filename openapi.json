@@ -1,0 +1,50 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "FastAPI",
+        "version": "0.1.0"
+    },
+    "paths": {
+        "/": {
+            "post": {
+                "summary": "FileInput",
+                "operationId": "FileInput_post_files_info",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FilesInfoInput"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "FilesInfoInput": {
+                "properties": {
+                    "content": {
+                        "type": "string",
+                        "title": "Content",
+                        "default": "this is a test file with\nlinebreaks\nand \"strings surrounded by double quotes\""
+                    }
+                },
+                "type": "object",
+                "title": "FilesInfoInput"
+            }
+        }
+    }
+}
